@@ -1,0 +1,68 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/card.css'%}"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% if messages %}
+{% for msg in messages %}
+<h2 style="color: blueviolet;">{{msg}}</h2>
+{% endfor %}
+{% endif %}
+
+{% for m in data %}
+<div class="card">
+    
+  <img src="{{ m.pim.url }}" alt="John" style="width:100%; height: 20%; " >
+  <h1 style="font-size: 20px;">{{m.pnm}}</h1>
+  <p class="title" style="color: red;">{{m.prc}}/-</p>
+  <p>{{m.des}}</p>
+  <button><a href="{% url 'cart' m.id %}" style="color: aliceblue;">Add to cart</a></button>
+
+
+</div>
+{% endfor %}
+
+
+
+
+<!-- <table class="eael-data-table">
+    <thead>
+        <tr>
+            
+            <th>Pet name</th>
+            <th>image</th>
+            <th>price</th>
+
+
+<th>Description</th> -->
+<!-- <th>Edit</th>
+<th>Delete</th> -->
+<!-- <th> </th> -->
+<!-- </tr>
+</thead>
+<tbody> -->
+<!-- {% for m in data %} -->
+<!-- <tr><td class="heading-tage">{{m.fnm}}</td><td>&nbsp;{{m.eml}}</td><td>&nbsp;{{m.mob}}</td><td>&nbsp;{{m.psw}}</td></tr>
+<tr>
++.<td>{{m.eml}}</td><td>{{m.eml}}</td><td>{{m.mob}}</td><td>{{m.psw}}</td></tr> -->
+<!-- <tr> -->
+<!-- <td class="hi" id="n"></td> -->
+<!-- <td class="hi">{{m.pnm}}</td>
+<td class="hi">&nbsp;{{m.pim}}</td>
+<td class="hi">&nbsp;{{m.prc}}</td>
+<td class="hi">&nbsp;{{m.des}}</td> -->
+<!-- <td class="hi"><button><a href="{% url 'edit' m.id %}">Edit</a></button></td>
+<td class="hi"><button><a href="{% url 'delete' m.id %}">Delete</a></button></td> -->
+
+<!-- </tr>
+{% endfor %}
+</tbody>
+</table> -->
+
+<!-- <script>
+for(i=1;i<=100;i++){
+document.querySelector('#n').textContent=i;
+ }
+</script> -->
+
+
+

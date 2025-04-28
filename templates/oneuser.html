@@ -1,0 +1,56 @@
+{% load static %}
+ <link rel="stylesheet" href="{%static 'css/user.css'%}"/>
+ <script src="{%static 'js/user.js' %}"></script>
+<header>
+    <!-- <h1>Cats_Table</h1> -->
+  </header>
+  
+  <div class="table-wrap">
+    <table class="srt">
+      
+      
+      <caption>
+        <!-- <h3></h3> -->
+      </caption>
+      <thead>
+        <tr>
+          <th class="no-sort" name="name"><button>Name</button></th>
+          <th aria-sort="ascending">
+            <button name="email">Email<span aria-hidden="true"></span></button>
+          </th>
+          <th aria-sort="ascending">
+            <button name="mob">Phone<span aria-hidden="true"></span></button>
+          </th>
+          <th aria-sort="ascending">
+            <button name="pas">Password<span aria-hidden="true"></span></button>
+          </th>
+          <th aria-sort="ascending">
+            <button name="save">Update<span aria-hidden="true"></span></button>
+          </th>
+          
+          
+        </tr>
+      </thead>
+      <tbody>
+        <form  method="post">
+          {% csrf_token %}
+        {% for m in data%}
+        <tr>
+           
+          <td><input type="text" value="{{m.fnm}}" name="fn"><input type="text" value="{{m.id}}" name="idn" hidden> </td>
+
+          <td><input type="email" value="{{m.eml}}" name="em"> </td>
+          <td><input type="number" value="{{m.mob}}" name="mb"> </td>
+          <td><input type="text" value="{{m.psw}}" name="ps"></td>
+          <td><button>save</button></td>
+         
+
+          
+      
+        </tr>
+        {% endfor %}
+      </form>
+      </tbody>
+    
+    </table>
+  </div>

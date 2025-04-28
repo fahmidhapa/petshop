@@ -1,0 +1,54 @@
+ {% load static %}
+ <link rel="stylesheet" href="{%static 'css/user.css'%}"/>
+ <script src="{%static 'js/user.js' %}"></script>
+<header>
+    <!-- <h1>Cats_Table</h1> -->
+  </header>
+  
+  <div class="table-wrap">
+    <table class="srt">
+        {%csrf_token%}
+      <caption>
+        <!-- <h3></h3> -->
+      </caption>
+      <thead>
+        <tr>
+          <th class="no-sort" name="name"><button>Name</button></th>
+          <th aria-sort="ascending">
+            <button name="email">Email<span aria-hidden="true"></span></button>
+          </th>
+          <th aria-sort="ascending">
+            <button name="mob">Phone<span aria-hidden="true"></span></button>
+          </th>
+          <th aria-sort="ascending">
+            <button name="pas">Password<span aria-hidden="true"></span></button>
+          </th>
+          <th aria-sort="ascending">
+            <button name="ed">Edit<span aria-hidden="true"></span></button>
+          </th>
+          <th aria-sort="ascending">
+            <button name="de">Delete<span aria-hidden="true"></span></button>
+          </th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for m in data%}
+        <tr>
+           
+          <td>{{m.fnm}}</td>
+          <td>{{m.eml}}</td>
+          <td>{{m.mob}}</td>
+          <td>{{m.psw}}</td>
+          <td><button><a href="{% url 'edit' m.id %}">Edit</a></button></td>
+          <td><button><a href="{% url 'delete' m.id %}">delete</a></button></td>
+          
+
+          
+      
+        </tr>
+        {%endfor%}
+     
+      </tbody>
+    </table>
+  </div>
